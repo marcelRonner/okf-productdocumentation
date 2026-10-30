@@ -2,6 +2,10 @@
 !theme plain
 skinparam classAttributeIconSize 0
 skinparam classFontStyle bold
+skinparam class<<v1-5-new>> {
+  BackgroundColor #C7F9CC
+  BorderColor #38A169
+}
 
 title Domain Model – ATM System
 
@@ -81,6 +85,20 @@ class AuditLog {
   detail : String
 }
 
+class Partner <<v1-5-new>> {
+  partnerId : String
+  name : String
+}
+
+class Proposal <<v1-5-new>> {
+  proposalId : String
+  text : String
+  minAmount : Decimal
+  maxAmount : Decimal
+  validFrom : Date
+  validUntil : Date
+}
+
 ' Relationships
 Bank "1" -- "1..*" ATM : operates >
 Bank "1" -- "1..*" Customer : serves >
@@ -94,5 +112,8 @@ ATM "1" -- "1" CashDispenser : contains >
 CashDispenser "1" -- "1..*" CashCassette : holds >
 ATM "1" -- "0..*" AuditLog : records >
 Transaction "1" -- "1" Account : affects >
+Bank "1" -- "0..*" Partner : cooperates with >
+Partner "1" -- "1..*" Proposal : offers >
+ATM "0..*" -- "0..*" Proposal : holds >
 
 @enduml

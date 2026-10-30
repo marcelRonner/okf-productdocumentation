@@ -4,13 +4,15 @@ linkTitle: "Domain Model"
 type: domain-model
 description: "The domain model of the ATM system at a glance: its class diagram, and a link to each business entity."
 weight: 1
-tags: [atm, bank, customer, account, card, session, transaction, receipt, cash-dispenser, cash-cassette, audit-log]
+tags: [atm, bank, customer, account, card, session, transaction, receipt, cash-dispenser, cash-cassette, audit-log, partner, proposal]
 sources:
   - id: cr-1-3
     resource: /sources/cr_1_3.md
+  - id: cr-1-5
+    resource: /sources/cr_1_5.md
 generated:
   by: jarvis/1.0
-  at: 2026-09-13T09:54:02Z
+  at: 2026-10-30T14:51:33Z
 verified:
   - by: human:owner
     at: 2026-09-13T09:23:45Z
@@ -19,6 +21,9 @@ verified:
 ---
 
 # Domain Model – ATM System
+
+> [!NOTE] v1.5 – Changed 2026-10-30
+> Partner and Proposal are new classes.
 
 ## Overview
 
@@ -45,3 +50,5 @@ This domain model describes the core business entities and their relationships f
 - [CashDispenser](entities/cashDispenser.md)
 - [CashCassette](entities/cashCassette.md)
 - [AuditLog](entities/auditLog.md)
+- [Partner](entities/partner.md)
+- [Proposal](entities/proposal.md)

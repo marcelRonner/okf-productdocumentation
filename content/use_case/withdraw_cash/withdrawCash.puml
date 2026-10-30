@@ -12,6 +12,11 @@ if (Amount within daily limit?) then (yes)
       :Bank Backend creates Transaction\n(type = WITHDRAWAL, status = PENDING);
       :Bank Backend debits Account;
       :ATM ejects Card;
+      if (Proposal matches withdrawal amount?) then (yes)
+        #C7F9CC:ATM displays Proposals;
+        #C7F9CC:ATM writes AuditLog entry;
+      else (no)
+      endif
       :ATM dispenses cash;
       if (Cash dispensed successfully?) then (yes)
         :ATM updates CashCassette quantities;

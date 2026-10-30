@@ -9,9 +9,11 @@ sources:
     resource: /sources/cr_1_3.md
   - id: cr-1-4
     resource: /sources/cr_1_4.md
+  - id: cr-1-5
+    resource: /sources/cr_1_5.md
 generated:
   by: jarvis/1.0
-  at: 2026-09-13T18:34:19Z
+  at: 2026-10-30T14:51:33Z
 verified:
   - by: human:owner
     at: 2026-09-13T09:23:45Z
@@ -27,11 +29,11 @@ verified:
 
 # OKF Product Documentation – ATM System
 
-> [!NOTE] v1.3 – Changed 2026-09-13
-> The page is now the home of the OKF product documentation: *What this is*, *How the artifacts interlink* and *Learn more* are new, and the list links the entities, actors, sources and log.
-
 > [!NOTE] v1.4 – Changed 2026-09-13
 > *Sources* and *Log* include the Open Knowledge Format assessments; the interlinkage shows where they fit.
+
+> [!NOTE] v1.5 – Changed 2026-10-30
+> The user story list counts US-2.7 and release R4.
 
 ## What this is
 
@@ -71,7 +73,7 @@ cites it.
 - [**State Charts**](state_chart/transactionStateChart.md) — Entity lifecycle diagrams traced to use case activities
   - [Transaction](state_chart/transactionStateChart.md) — PENDING → COMPLETED / FAILED lifecycle
 - [**Epics & Story Map**](epics/epics.md) — Work breakdown into epics with release-grouped user stories
-  - [User Stories](epics/user_stories/_index.md) — 16 stories in 3C format across 3 releases
+  - [User Stories](epics/user_stories/_index.md) — 17 stories in 3C format across 4 releases
 - [**Change Log**](change_log/changeLog.md) — Version history with full artifact traceability
 - [**Sources**](sources/_index.md) — The change requests the documentation derives from, and the conformance assessments behind them
 - [**Log**](log.md) — Every version and every assessment, newest first, in Open Knowledge Format

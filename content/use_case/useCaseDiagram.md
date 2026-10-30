@@ -4,19 +4,24 @@ linkTitle: "Use Case Overview"
 type: use-case-diagram
 description: "This use-case diagram shows how the actors identified in the Business Process interact with the ATM system."
 weight: 1
-tags: [atm, bank, customer, card, receipt]
+tags: [atm, bank, customer, card, receipt, partner, proposal]
 sources:
   - id: business-process
     resource: /business_process/businessProcess.md
+  - id: cr-1-5
+    resource: /sources/cr_1_5.md
 generated:
   by: jarvis/1.0
-  at: 2026-09-12T21:29:07Z
+  at: 2026-10-30T14:51:33Z
 verified:
   - by: human:owner
     at: 2026-09-13T09:23:45Z
 ---
 
 # Use-Case Diagram – ATM System
+
+> [!NOTE] v1.5 – Changed 2026-10-30
+> Withdraw Cash displays Partner Proposals and now spans steps 4a.1 – 4a.9.
 
 ## Overview
 
@@ -42,8 +47,8 @@ This use-case diagram shows how the actors identified in the [Business Process](
 ## Use Cases
 
 ### Withdraw Cash
-The customer withdraws a specified amount of cash from their account. The ATM ejects the Card before dispensing cash to prevent the Customer from forgetting it.
-Corresponds to **Business Process steps 4a.1 – 4a.7** (enter amount → check limits & funds → eject Card → dispense cash).[^business-process]
+The customer withdraws a specified amount of cash from their account. The ATM ejects the Card before dispensing cash to prevent the Customer from forgetting it, and displays matching Partner Proposals while the Customer retrieves the Card.
+Corresponds to **Business Process steps 4a.1 – 4a.9** (enter amount → check limits & funds → eject Card → display Proposals → dispense cash).[^business-process]
 
 ### Check Balance
 The customer views the current balance of their account on screen.

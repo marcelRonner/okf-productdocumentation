@@ -9,6 +9,10 @@ weight: 80
 
 # Log
 
+## 2026-10-30
+
+- **Release:** [v1.5 – Partner Proposals During Withdrawal](change_log/changeLog.md) — While the Customer retrieves the Card during a withdrawal, the ATM displays Partner Proposals matching the withdrawal amount, so the Customer gets ideas for what to do with the cash. See CR-1.5.
+
 ## 2026-09-13
 
 - **Assessment:** [OKF v0.2 Conformance Assessment – 2026-09-13](sources/okf_assessment_2026_09_13.md) — Conformant with OKF v0.2 on all three mandatory checks; of the 41 checks, 26 meets, 1 partial, 5 not adopted, 1 deviates, 8 n/a.

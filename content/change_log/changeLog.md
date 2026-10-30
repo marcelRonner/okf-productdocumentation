@@ -15,9 +15,11 @@ sources:
     resource: /sources/cr_1_3.md
   - id: cr-1-4
     resource: /sources/cr_1_4.md
+  - id: cr-1-5
+    resource: /sources/cr_1_5.md
 generated:
   by: jarvis/1.0
-  at: 2026-09-13T18:34:19Z
+  at: 2026-10-30T14:51:33Z
 verified:
   - by: human:owner
     at: 2026-09-13T09:23:45Z
@@ -45,6 +47,30 @@ Each version section lists **every artifact that was created or changed**, with 
 | 🟡 `changed` | Existing artifact or element modified |
 | 🔴 `deprecated` | Artifact or element scheduled for removal |
 | ⚫ `removed` | Artifact or element deleted |
+
+---
+
+## v1.5 – Partner Proposals During Withdrawal (2026-10-30)
+
+While the Customer retrieves the Card during a withdrawal, the ATM displays Partner Proposals matching the withdrawal amount, so the Customer gets ideas for what to do with the cash. See [CR-1.5](../sources/cr_1_5.md).
+
+| Artifact | Status | Description |
+|---|---|---|
+| [Domain Model – ATM System](../domain_model/domainModel.md) | 🟡 changed | Partner and Proposal added to the classes |
+| [Domain Model (PlantUML)](../domain_model/domainModel.puml) | 🟡 changed | Two classes and three relationships added |
+| [Partner](../domain_model/entities/partner.md) | 🟢 new | Entity page |
+| [Proposal](../domain_model/entities/proposal.md) | 🟢 new | Entity page |
+| [Business Process – ATM Cash Withdrawal & Services](../business_process/businessProcess.md) | 🟡 changed | New steps 4a.7 and 4a.8; dispensing renumbered to 4a.9 |
+| [Use-Case Diagram – ATM System](../use_case/useCaseDiagram.md) | 🟡 changed | Withdraw Cash description and step range |
+| [ATM System](../use_case/actors/atmSystem.md) | 🟡 changed | Displays Proposal; read access to the Proposals held on the ATM |
+| [Use Case – Withdraw Cash](../use_case/withdraw_cash/withdrawCash.md) | 🟡 changed | Postconditions, description and step range |
+| [UC: Withdraw Cash (PlantUML)](../use_case/withdraw_cash/withdrawCash.puml) | 🟡 changed | Added the Proposal decision and actions after "ATM ejects Card" |
+| [Epics & Story Map – ATM System](../epics/epics.md) | 🟡 changed | US-2.7 added in new row R4 – Delight; BP Steps 4a.1 – 4a.9 |
+| [US-2.7 – See Partner Proposals While Waiting for Card](../epics/user_stories/us_2_7.md) | 🟢 new | WOULD LIKE/Attractive, R4 Delight |
+| [Home](../_index.md) | 🟡 changed | 17 stories across 4 releases; expired v1.3 note removed |
+| [Change Log – ATM System](changeLog.md) | 🟡 changed | This entry |
+| [Log](../log.md) | 🟡 changed | Regenerated with v1.5 |
+| [CR-1.5](../sources/cr_1_5.md) | 🟢 new | The change request for this version |
 
 ---
 

@@ -4,19 +4,24 @@ linkTitle: "Business Process"
 type: business-process
 description: "The end-to-end flow of a customer interacting with an ATM, from card insertion and authentication through transaction execution to session completion."
 weight: 1
-tags: [atm, bank, customer, account, card, session, transaction, receipt, cash-dispenser, audit-log]
+tags: [atm, bank, customer, account, card, session, transaction, receipt, cash-dispenser, audit-log, partner, proposal]
 sources:
   - id: domain-model
     resource: /domain_model/domainModel.md
+  - id: cr-1-5
+    resource: /sources/cr_1_5.md
 generated:
   by: jarvis/1.0
-  at: 2026-05-22T18:15:23Z
+  at: 2026-10-30T14:51:33Z
 verified:
   - by: human:owner
     at: 2026-09-13T09:23:45Z
 ---
 
 # Business Process – ATM Cash Withdrawal & Services
+
+> [!NOTE] v1.5 – Changed 2026-10-30
+> New steps 4a.7 and 4a.8 display Partner Proposals; dispensing is renumbered to 4a.9.
 
 ## Overview
 
@@ -34,6 +39,8 @@ flowchart TD
     classDef atm fill:#FEF9C3,stroke:#CA8A04,color:#713F12
     classDef bank fill:#DCFCE7,stroke:#16A34A,color:#14532D
     classDef decision fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D
+    classDef vNew fill:#C7F9CC,stroke:#38A169,color:#1C4532
+    classDef vChanged fill:#FEFCBF,stroke:#D69E2E,color:#744210
 
     Start(("Start")) --> InsertCard["1.1 Insert Card into ATM"]:::customer
     InsertCard --> ReadCard["1.2 Read Card data"]:::atm
@@ -69,7 +76,10 @@ flowchart TD
 
     CheckCash -->|Yes| CreateTx["4a.5 Create Transaction\nDebit Account"]:::bank
     CreateTx --> EjectCardW["4a.6 Eject Card"]:::atm
-    EjectCardW --> DispenseCash["4a.7 Dispense cash\nUpdate CashCassettes"]:::atm
+    EjectCardW --> CheckProposal{"4a.7 Proposal matches\nwithdrawal amount?"}:::vNew
+    CheckProposal -->|Yes| ShowProposal["4a.8 Display Proposals\nWrite AuditLog entry"]:::vNew
+    CheckProposal -->|No| DispenseCash["4a.9 Dispense cash\nUpdate CashCassettes"]:::vChanged
+    ShowProposal --> DispenseCash
     DispenseCash --> LogTx["5.1 Write AuditLog entry"]:::bank
 
     ShowBalance --> LogTx
